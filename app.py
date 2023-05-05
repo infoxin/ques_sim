@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   app.py
-@Time    :   2023/04/20 14:14:18
-@Author  :   Xin HUANG 
-@Version :   1.0
-@Contact :   xin.huang@capgemini.com
+
 '''
 
 # here put the import lib
