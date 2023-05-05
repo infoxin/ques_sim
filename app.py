@@ -58,6 +58,6 @@ similarity_df.sort_values('Similarity',ascending = False,inplace = True )
 
 
 if st.button('submit'):
-    st.text("Similar questions (Top-5)")
+    st.write("Similar questions (Top-5)")
     st.dataframe(similarity_df.head(5))
     print('end')
