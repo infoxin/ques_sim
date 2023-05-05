@@ -15,12 +15,6 @@ from sentence_transformers import SentenceTransformer, util
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-@st.cache_resource
-def download_en_core_web_sm():
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-
-download_en_core_web_sm()
-
 nlp = spacy.load("en_core_web_sm")
 ques = st.text_input('Questions', 'How can I be a good geologist?')
 st.text("""Question examples:  
