@@ -15,7 +15,6 @@ from sentence_transformers import SentenceTransformer, util
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-nlp = spacy.load("en_core_web_lg")
 ques = st.text_input('Questions', 'How can I be a good geologist?')
 st.text("""Question examples:  
 How can I be a good geologist? 
@@ -23,7 +22,7 @@ How to speak English fluently?
 What's the most important book that you have ever read?
 How do I prevent breast cancer?
 What is the step by step guide to invest in share market?""")
-doc1 = nlp(ques)
+
 embeddings1 = model.encode(ques, convert_to_tensor=True)
 ques_list =['What should I do to be a great geologist?',
             'What makes a good geologist?',
@@ -43,12 +42,8 @@ ques_list =['What should I do to be a great geologist?',
             'How can a beginner invest in share market in India?']
 
 ans = ['' for i in range(len(ques_list))]
-similarity_list = list()
+
 print('questions list length:', len(ques_list))
-for q in ques_list:
-    doc = nlp(q)
-    similarity = doc1.similarity(doc)
-    similarity_list.append(similarity)
 
 embeddings2 = model.encode(ques_list, convert_to_tensor=True)
 cosine_scores = util.cos_sim(embeddings1, embeddings2)
