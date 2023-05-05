@@ -19,7 +19,7 @@ from sentence_transformers import SentenceTransformer, util
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_sm")
 ques = st.text_input('Questions', 'How can I be a good geologist?')
 st.text("""Question examples:  
 How can I be a good geologist? 
